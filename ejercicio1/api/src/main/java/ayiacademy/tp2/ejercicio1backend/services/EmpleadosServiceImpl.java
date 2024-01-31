@@ -36,4 +36,10 @@ public class EmpleadosServiceImpl implements EmpleadosService {
     public void delete(int legajo) {
         empleadosRepository.deleteById(legajo);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public boolean exists(int legajo) {
+        return empleadosRepository.existsById(legajo);
+    }
 }

@@ -12,4 +12,6 @@ public interface EmpleadosService {
     Optional<Empleado> findByLegajo(int legajo);
 
     void delete(int legajo);
+
+    boolean exists(int legajo);
 }
