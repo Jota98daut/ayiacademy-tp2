@@ -13,6 +13,15 @@ public class EmpleadosController {
     @Autowired
     EmpleadosService empleadosService;
 
+    @GetMapping("/{legajo}")
+    public ResponseEntity<Empleado> getEmpleado(@PathVariable int legajo) {
+        var empleado = empleadosService.findByLegajo(legajo);
+        if (empleado.isPresent())
+            return new ResponseEntity<>(empleado.get(), HttpStatus.OK);
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
     @GetMapping
     public Iterable<Empleado> getEmpleados() {
         return empleadosService.getAll();
