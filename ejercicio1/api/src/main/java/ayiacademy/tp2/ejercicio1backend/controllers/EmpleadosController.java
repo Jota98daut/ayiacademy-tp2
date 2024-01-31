@@ -35,4 +35,22 @@ public class EmpleadosController {
         empleadosService.save(empleado);
         return new ResponseEntity<>("Empleado creado", HttpStatus.OK);
     }
+
+    @PutMapping
+    public ResponseEntity<String> putUpdateEmpleado(@RequestBody Empleado empleado) {
+        if (!empleadosService.exists(empleado.getLegajo()))
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        empleadosService.save(empleado);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{legajo}")
+    public ResponseEntity<Empleado> deleteEmpleado(@PathVariable int legajo) {
+        if (!empleadosService.exists(legajo))
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        empleadosService.delete(legajo);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
