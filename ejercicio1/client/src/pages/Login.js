@@ -1,6 +1,4 @@
 import { Alert, Button, Container, Form } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

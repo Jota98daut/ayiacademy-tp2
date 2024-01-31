@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Login from "./pages/Login";
+import Empleados from "./pages/empleados/Empleados";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min";
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import Login from "./pages/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/empleados",
-    element: <div>Empleados</div>,
+    element: <Empleados titulo="Listado de Empleados" />,
   },
 ]);
 
