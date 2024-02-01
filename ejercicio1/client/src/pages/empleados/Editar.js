@@ -41,7 +41,7 @@ const EditarEmpleado = () => {
   };
 
   return (
-    <Container>
+    <Container className="d-flex flex-column align-items-center">
       <h1>Editar empleado</h1>
       <Form className="d-flex flex-column gap-3" onSubmit={handleSubmit}>
         <InputGroup>

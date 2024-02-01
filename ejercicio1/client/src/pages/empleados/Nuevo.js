@@ -8,7 +8,7 @@ const NuevoEmpleado = () => {
   const [failureMsg, setFailureMsg] = useState("");
 
   return (
-    <Container>
+    <Container className="d-flex flex-column align-items-center">
       <h1>Nuevo empleado</h1>
       <FormEmpleado
         setShowSuccess={setShowSuccess}
@@ -50,7 +50,7 @@ const FormEmpleado = ({ setShowSuccess, setFailureMsg }) => {
   };
 
   return (
-    <Form className="d-flex flex-column gap-3" onSubmit={handleSubmit}>
+    <Form className="w-50 d-flex flex-column gap-3" onSubmit={handleSubmit}>
       <InputGroup>
         <Form.Control
           type="number"

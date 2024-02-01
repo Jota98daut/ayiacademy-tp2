@@ -18,12 +18,9 @@ const Empleados = ({ titulo }) => {
   useEffect(updateEmpleados, []);
 
   return (
-    <Container>
+    <Container className="d-flex flex-column align-items-center">
       <h1>{titulo}</h1>
       <Listado empleados={empleados} updateEmpleados={updateEmpleados} />
-      <Link to="/empleados/nuevo">
-        <Button>Nuevo</Button>
-      </Link>
     </Container>
   );
 };
@@ -31,7 +28,7 @@ const Empleados = ({ titulo }) => {
 const Listado = ({ empleados, updateEmpleados }) => {
   return (
     <div>
-      <Table striped>
+      <Table striped className="w-auto align-middle">
         <thead className="table-primary">
           <tr>
             <th scope="col">Legajo</th>
@@ -71,6 +68,9 @@ const Listado = ({ empleados, updateEmpleados }) => {
       {empleados.length != 0 || (
         <Alert variant="warning">No se encontraron empleados</Alert>
       )}
+      <Link to="/empleados/nuevo">
+        <Button>Nuevo</Button>
+      </Link>
     </div>
   );
 };
