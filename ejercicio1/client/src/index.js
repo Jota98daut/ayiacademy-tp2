@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Empleados from "./pages/empleados/Empleados";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import {
   createBrowserRouter,
   Navigate,

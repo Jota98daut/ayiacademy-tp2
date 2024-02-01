@@ -2,27 +2,32 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Alert, Button, Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import BotonBorrar from "./BotonBorrar";
 
 const Empleados = ({ titulo }) => {
   const [empleados, setEmpleados] = useState([]);
 
-  useEffect(() => {
+  const updateEmpleados = () => {
     axios
       .get("http://localhost:8080/empleados")
       .then((response) => setEmpleados(response.data))
       .catch(console.log);
-  }, []);
+  };
+
+  useEffect(updateEmpleados, []);
 
   return (
     <Container>
       <h1>{titulo}</h1>
-      <Listado empleados={empleados} />
-      <Link to="/empleados/nuevo"><Button>Nuevo</Button></Link>
+      <Listado empleados={empleados} updateEmpleados={updateEmpleados} />
+      <Link to="/empleados/nuevo">
+        <Button>Nuevo</Button>
+      </Link>
     </Container>
   );
 };
 
-const Listado = ({ empleados }) => {
+const Listado = ({ empleados, updateEmpleados }) => {
   return (
     <div>
       <Table striped>
@@ -34,6 +39,7 @@ const Listado = ({ empleados }) => {
             <th scope="col">Cargo</th>
             <th scope="col">Sucursal</th>
             <th scope="col">Ant.</th>
+            <th />
           </tr>
         </thead>
         <tbody className="table-group-divider">
@@ -45,6 +51,12 @@ const Listado = ({ empleados }) => {
               <td>{empleado.cargo}</td>
               <td>{empleado.sucursal}</td>
               <td>{empleado.antiguedadAnios}</td>
+              <td>
+                <BotonBorrar
+                  legajo={empleado.legajo}
+                  updateEmpleados={updateEmpleados}
+                />
+              </td>
             </tr>
           ))}
         </tbody>
