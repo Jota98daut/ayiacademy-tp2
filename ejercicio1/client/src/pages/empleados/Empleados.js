@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Alert, Button, Container, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import BotonBorrar from "./BotonBorrar";
+import { BotonEditar } from "./Editar";
 
 const Empleados = ({ titulo }) => {
   const [empleados, setEmpleados] = useState([]);
@@ -40,6 +41,7 @@ const Listado = ({ empleados, updateEmpleados }) => {
             <th scope="col">Sucursal</th>
             <th scope="col">Ant.</th>
             <th />
+            <th />
           </tr>
         </thead>
         <tbody className="table-group-divider">
@@ -51,6 +53,11 @@ const Listado = ({ empleados, updateEmpleados }) => {
               <td>{empleado.cargo}</td>
               <td>{empleado.sucursal}</td>
               <td>{empleado.antiguedadAnios}</td>
+              <td>
+                <BotonEditar
+                  legajo={empleado.legajo}
+                />
+              </td>
               <td>
                 <BotonBorrar
                   legajo={empleado.legajo}

@@ -11,6 +11,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import NuevoEmpleado from "./pages/empleados/Nuevo";
+import EditarEmpleado from "./pages/empleados/Editar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/empleados/nuevo",
     element: <NuevoEmpleado />,
+  },
+  {
+    path: "/empleados/editar/:legajo",
+    element: <EditarEmpleado />,
   },
 ]);
 
