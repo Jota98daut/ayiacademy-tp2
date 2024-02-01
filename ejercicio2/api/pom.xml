@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ayiacademy.tp2</groupId>
-	<artifactId>ejercicio1-backend</artifactId>
+	<artifactId>ejercicio2-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ejercicio1-backend</name>
+	<name>ejercicio2-backend</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
