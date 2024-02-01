@@ -9,6 +9,7 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
+import NuevoEmpleado from "./pages/empleados/Nuevo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/empleados",
     element: <Empleados titulo="Listado de Empleados" />,
+  },
+  {
+    path: "/empleados/nuevo",
+    element: <NuevoEmpleado />,
   },
 ]);
 

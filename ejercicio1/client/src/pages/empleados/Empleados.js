@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Alert, Container, Table } from "react-bootstrap";
+import { Alert, Button, Container, Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Empleados = ({ titulo }) => {
   const [empleados, setEmpleados] = useState([]);
@@ -15,6 +16,15 @@ const Empleados = ({ titulo }) => {
   return (
     <Container>
       <h1>{titulo}</h1>
+      <Listado empleados={empleados} />
+      <Link to="/empleados/nuevo"><Button>Nuevo</Button></Link>
+    </Container>
+  );
+};
+
+const Listado = ({ empleados }) => {
+  return (
+    <div>
       <Table striped>
         <thead className="table-primary">
           <tr>
@@ -42,7 +52,7 @@ const Empleados = ({ titulo }) => {
       {empleados.length != 0 || (
         <Alert variant="warning">No se encontraron empleados</Alert>
       )}
-    </Container>
+    </div>
   );
 };
 
