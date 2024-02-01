@@ -94,7 +94,7 @@ const EditarEmpleado = () => {
           />
         </InputGroup>
         <InputGroup>
-          <Button type="submit">Agregar</Button>
+          <Button type="submit">Editar</Button>
           <Button
             variant="outline-primary"
             onClick={() => {
